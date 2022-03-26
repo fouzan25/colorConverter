@@ -37,7 +37,7 @@ class ResultContainer extends StatelessWidget {
               },
             ),
           );
-          Clipboard.setData(ClipboardData(text: text)).then(
+          Clipboard.setData(ClipboardData(text: "Color($text)")).then(
               (value) => ScaffoldMessenger.of(context).showSnackBar(snackBar));
         },
       ),
