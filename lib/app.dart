@@ -1,4 +1,6 @@
+import 'package:color_converter/provider/color_list_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import './screens/home.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,13 +9,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      showSemanticsDebugger: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
+    return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => ColorsListProvider())],
+      child: MaterialApp(
+        showSemanticsDebugger: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+        ),
+        home: const Scaffold(body: Home()),
       ),
-      home: const Scaffold(body: Home()),
     );
   }
 }
