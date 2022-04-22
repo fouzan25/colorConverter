@@ -50,7 +50,12 @@ class CustomSearchDelegate extends SearchDelegate {
         Provider.of<ColorsListProvider>(context, listen: false).listOfColor;
     List<ColorModel> foundedData = [];
     for (var colorModel in searchIn) {
-      if (colorModel.colorName.toLowerCase().contains(query.toLowerCase())) {
+      if ((colorModel.colorName
+              .toLowerCase()
+              .contains(query.toLowerCase().trim())) ||
+          (colorModel.hexCode
+              .toLowerCase()
+              .contains(query.toLowerCase().trim()))) {
         foundedData.add(colorModel);
       }
     }
