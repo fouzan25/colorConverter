@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ColorConverter {
-  ColorConverter();
-
-  Color getColorFromHex(String hexColor, List rgbVal) {
+extension CustomColorExtension on String {
+  Color getColorFromString(List rgbVal) {
+    var hexColor = this;
     hexColor = hexColor.toUpperCase().replaceAll('#', '');
 
     if (hexColor.contains('+')) {
