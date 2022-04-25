@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:color_converter/extensions/string_to_color_extension.dart';
+import 'package:color_converter/extensions/extensions.dart';
 import 'package:color_converter/model/color_model.dart';
 import 'package:color_converter/widgets/grid_tile_block.dart';
 
@@ -19,8 +19,8 @@ class GridListUi extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         itemCount: colorList.length,
         itemBuilder: (ctx, i) => GridTileBlock(
-            colorFromParent:
-                colorList[i].hexCode.getColorFromString(colorList[i].rgbValue),
+            colorId: colorList[i].id,
+            colorFromParent: colorList[i].hexCode.getColorFromString(),
             colorName: colorList[i].colorName,
             rgbValue: colorList[i].rgbValue),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

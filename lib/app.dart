@@ -1,3 +1,4 @@
+import 'package:color_converter/screens/details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.green,
         ),
         home: const Scaffold(body: Home()),
+        routes: {
+          DetailsScreen.routeName: (ctx) => const DetailsScreen(),
+        },
       ),
     );
   }

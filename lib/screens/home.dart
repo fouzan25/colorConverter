@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:color_converter/extensions/string_to_color_extension.dart';
+import 'package:color_converter/extensions/extensions.dart';
 import 'package:color_converter/provider/color_list_provider.dart';
 import 'package:color_converter/screens/grid_list_ui.dart';
 import 'package:color_converter/widgets/custom_search_delegate.dart';
@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: '#2c2c2c'.getColorFromString([0, 0, 0]),
+        backgroundColor: '#2c2c2c'.getColorFromString(),
         leading: const Center(child: Text('File')),
         actions: [
           IconButton(

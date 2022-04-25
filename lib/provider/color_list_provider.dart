@@ -25,4 +25,8 @@ class ColorsListProvider with ChangeNotifier {
       print('operation failed');
     }
   }
+
+  ColorModel findById(String id) {
+    return _colorList.firstWhere((prod) => prod.id == id);
+  }
 }
